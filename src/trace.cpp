@@ -14,11 +14,10 @@ std::uint32_t Manager::getPowerLimit()
     oob_status_t ret = OOB_MAILBOX_CMD_UNKNOWN;
     uint8_t soc_num = 0;
     std::uint32_t state;
-    uint16_t retries = 0;
 
     while (ret != OOB_SUCCESS)
     {
-	ret = read_socket_power_limit(soc_num, &status);
+	ret = read_socket_power_limit(soc_num, &state);
 
         if (ret != OOB_SUCCESS)
         {
