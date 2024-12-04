@@ -1,0 +1,11 @@
+[Unit]
+Description=Traces logs manager
+
+[Service]
+ExecStart=/usr/bin/amd-traces
+SyslogIdentifier=amd-traces
+Type=simple
+BusName=xyz.openbmc_project.Traces
+
+[Install]
+WantedBy=multi-user.target
